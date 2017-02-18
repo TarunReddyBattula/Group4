@@ -3,11 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Teaching Ninja</title>
-    <link rel ="stylesheet/css" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel ="stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel = "stylesheet" href ="css/bootstrap.min.css">
+    <link rel = "stylesheet" href ="css/bootstrap-grid.min.css">
+    <!--<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src = "js/bootstrap.min.js"></script>
+    <script src = "javascript/main.js"></script>
+    <style>
+        body{
+            background-color: #a6d5ec;
+        }
+        #videoData{
+        }
+    </style>
 </head>
-<body>
+<body  onload = "init();">
+<div class ="container">
+    <div class = "row">
+        <div class = "col-md-6">
+            <h3>Video</h3>
+        </div>
+        <div class = "col-md-6">
+            <div class = "btn-group btn-group-lg" role = "group">
+                <button class = "btn btn-default ">DATA</button>
+                <button class = "btn btn-default ">WIKI</button>
+                <button class = "btn btn-default " onclick = "initGoogle();">GOOGLE</button>
+            </div>
+            <div id = "DATA">
+                <iframe id = "videoData">
 
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
