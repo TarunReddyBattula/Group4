@@ -1,0 +1,28 @@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src = "javascript/main.js"></script>
+<p id="notice"><%= notice %></p>
+<div class = "container">
+  <div class form = "row">
+    <div class = "col-md-6">
+      <table class = "table">
+        <tbody>
+         <% @videos.each do |video| %>
+      <tr>
+        <td><%= video.name %></td>
+        <td><%= video.tags %></td>
+        <td><%= link_to 'Open', video %></td>
+      </tr>
+    <% end %>
+    <% if @videos.blank? %>
+  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+<% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+
+<%= link_to 'New Video', new_video_path %>
