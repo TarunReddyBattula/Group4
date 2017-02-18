@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-    <script src = "javascripts/main.js"></script>
+    <script src = "/assets/javascripts/main.js"></script>
     <script>
         
     </script>
@@ -11,16 +11,19 @@
         <div class = "col-md-6">
             <h3 style="color: white;"><%=@video.name%></h3>
             <iframe id ="youtubeVideo" width="560" height="315" src="<%= @video.embeddedUrl %>" frameborder="0" allowfullscreen></iframe>
-            <h3 style="color: white;">Notes</h3>
-            <textarea id = "inputTextToSave" rows = "5" cols = "60"></textarea>
+            <button id ="noteName" class ="btn btn-default" onclick = "noters();">Notes</button>
+            <br>
+            <div id = "noting">
+           <textarea id = "inputTextToSave" rows="4" cols="50"></textarea>
             <table class = "table">
                 <tbody>
-    <tr>
-      <td><input style="color: black;" type = "text" size = "20" value = "File Name" id="inputFileNameToSaveAs"></td>
-       <td><button type="button" class="btn btn-default" onclick="saveTextAsFile()">Save Text to File</button></td>
-    </tr>
-    </tbody>
-      </table>
+                    <tr>
+                        <td><input style="color: black;" type = "text" size = "20" value = "File Name" id="inputFileNameToSaveAs"></td>
+                        <td><button type="button" class="btn btn-default" onclick="saveTextAsFile()">Save Text to File</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
         </div>
         <div class = "col-md-6">
 

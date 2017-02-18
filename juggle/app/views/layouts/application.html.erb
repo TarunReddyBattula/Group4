@@ -14,7 +14,7 @@
 
   <body onload = "init();">
     <nav class="navbar navbar-default" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
+  
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
@@ -22,12 +22,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <!--<a class="navbar-brand" href="#">--><img src="/assets/Untitled-2.png" top =50% height="45" width="45"><!--</a>-->
+        <a class="navbar-brand" href="https://group4-m17hra9959.c9users.io">JUGGLE</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+    <!--    <ul class="nav navbar-nav">
             <li class="active"><a href="#">Link</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -41,7 +41,7 @@
                     <li><a href="#">One more separated link</a></li>
                 </ul>
             </li>
-        </ul>
+        </ul>   -->
         <div class="col-sm-3 col-md-3">
             <form class="navbar-form" role="search">
                 <div class="input-group">
@@ -49,16 +49,16 @@
                         <%= text_field_tag :search, params[:search], placeholder: "Search Videos", class: 'form-control' %>
                         <span class = "input-group-btn">
                             <%= button_tag(type: "submit", class: "btn", name: "commit") do %>
-  <span class="glyphicon glyphicon-search"></span>
-<% end %> 
-</span>
-                        <% end %>
+                              <span class="glyphicon glyphicon-search"></span>
+                                <% end %> 
+                                </span>
+                        <% end %>   
                 </div>
             </form>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
-  Signed in as <%= current_user.name %>  <li><a href ='/logout'>Logout</li>
+  <%= current_user.name %>  <li><a href ='/logout'>Logout</li>
 <% else %>
   <li><a href = '/login' >Login</a></li>
   <li><a href =  '/signup' >Signup</a></li>

@@ -2,11 +2,25 @@
  * Created by San on 2/17/2017.
  */
  var divx = "ccc";
+ function noters(){
+     var divis = document.getElementById('noting');
+     var texting = document.getElementById("noteName");
+    if (divis.style.display !== 'none') {
+        divis.style.display = 'none';
+        texting.innerHTML = "Edit Notes";
+    }
+    else {
+        divis.style.display = 'block';
+        texting.innerHTML = "Notes";
+    }
+ }
 // ===============================================================================================================
 function initData(){
     if(divx != "ccc"){
         document.getElementById("videosDAta").innerHTML = '<p id ="xxxx">'+divx+'</p>';
     }
+    var frame = document.getElementById("videoData");
+    frame.src = "";
 }
 function init() {
     var frame = document.getElementById("videoData");
@@ -15,15 +29,19 @@ function init() {
 }
 // ============================================================================================================
 function initSearch() {
+    if(divx == "ccc"){
     divx = document.getElementById("xxxx").innerHTML;
     document.getElementById("videosDAta").innerHTML = "";
+    }
     var frame = document.getElementById("videoData");
     frame.src = "https://duckduckgo.com/";
 }
 // ============================================================================================================
 function initWiki() {
+    if(divx == "ccc"){
     var xx = document.getElementById("myInput").value;
     divx = document.getElementById("xxxx").innerHTML;
+    }
     document.getElementById("videosDAta").innerHTML = "";
     var frame = document.getElementById("videoData");
     frame.src = "https://www.wikipedia.org/wiki/"+xx;
