@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get 'users/new'
+  
+  get 'videos/search'
 
   root :to => "videos#index"
   resources :videos
@@ -15,4 +17,5 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+ 
 end

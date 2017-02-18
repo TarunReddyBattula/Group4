@@ -8,16 +8,17 @@
     <div class = "col-md-6">
       <table class = "table">
         <tbody>
+          
+<% if @videos.blank? %>
+  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+<% end %>
          <% @videos.each do |video| %>
       <tr>
         <td><%= video.name %></td>
         <td><%= video.tags %></td>
-        <td><%= link_to 'Open', video %></td>
+        <td><%= link_to "Details", video, :class => "btn btn-default" %></td>
       </tr>
     <% end %>
-    <% if @videos.blank? %>
-  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
-<% end %>
         </tbody>
       </table>
     </div>
@@ -25,4 +26,4 @@
 </div>
 <br>
 
-<%= link_to 'New Video', new_video_path %>
+<%= link_to "New Video", new_video_path,  :class => "btn btn-default"%>

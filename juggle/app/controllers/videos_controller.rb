@@ -56,7 +56,7 @@ class VideosController < ApplicationController
   if params[:search]
     @videos = Video.search(params[:search]).order("created_at DESC")
   else
-    @videos = Video.all.order("created_at DESC")
+    @videos = Video.all.order('created_at DESC')
   end
 end
 

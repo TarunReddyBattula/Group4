@@ -1,24 +1,61 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script src = "javascripts/main.js"></script>
+    <script>
+        
+    </script>
+
+<div class ="container">
+    <div class = "row">
+        <div class = "col-md-6">
+            <h3 style="color: white;"><%=@video.name%></h3>
+            <iframe id ="youtubeVideo" width="560" height="315" src="<%= @video.embeddedUrl %>" frameborder="0" allowfullscreen></iframe>
+            <h3 style="color: white;">Notes</h3>
+            <textarea id = "inputTextToSave" rows = "5" cols = "60"></textarea>
+            <table class = "table">
+                <tbody>
+    <tr>
+      <td><input style="color: black;" type = "text" size = "20" value = "File Name" id="inputFileNameToSaveAs"></td>
+       <td><button type="button" class="btn btn-default" onclick="saveTextAsFile()">Save Text to File</button></td>
+    </tr>
+    </tbody>
+      </table>
+        </div>
+        <div class = "col-md-6">
+
+            <nav class="customtab navbar navbar-default">
+                <div class="container-fluid">
+                  <!-- <div class="navbar-header">
+                        <a class="navbar-brand" href="#">WebSiteName</a>
+                    </div> <!-->
+                    <ul class="nav navbar-nav">
+                        <li><a href="javascript:initData();">DATA</a></li>
+                        <li><a href="javascript:initWiki();">WIKI</a></li>
+                        <li><a href="javascript:initSearch();">SEARCH</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+            <div id = "DATA">
+                <div id = "videosDAta">
+                    <p id ="xxxx"><%= @video.data %></p>
+                </div>
+                <input type="hidden" id="myInput" value="<%= @video.tags %>">
+                <iframe   frameborder="0" id = "videoData">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <script>
+      var frame = document.getElementById("videoData");
+      frame.width = window.innerWidth *0.45;
+      frame.height = window.innerHeight*0.7;
+    </script>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Tags:</strong>
-  <%= @video.tags %>
-</p>
+<%= link_to "Edit", edit_video_path(@video), :class => "btn btn-default" %>|
+<%= link_to "Back", videos_path, :class => "btn btn-default" %>
 
-<p>
-  <strong>Embeddedurl:</strong>
-  <%= @video.embeddedUrl %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @video.name %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @video.data %>
-</p>
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
